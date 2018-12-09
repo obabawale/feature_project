@@ -47,10 +47,10 @@ def index():
             no_stop_words_count = Counter(no_stop_words)
             # save the results
             results = sorted(
-                no_stop_words_count.items(),
-                key=operator.itemgetter(1),
-                reverse=True
-            )
+            	no_stop_words_count.items(),
+            	key=operator.itemgetter(1),
+            	reverse=True
+            )[:10]
             try:
                 result = Result(
                     url=url,
