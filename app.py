@@ -52,6 +52,7 @@ def count_and_save_words(url):
 
     # save the results
     try:
+        from models import Result
         result = Result(
             url=url,
             result_all=raw_word_count,
@@ -67,7 +68,7 @@ def count_and_save_words(url):
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    results = {}
+    results = ""
     if request.method == "POST":
         # get url that the person has entered
         url = request.form['url']
